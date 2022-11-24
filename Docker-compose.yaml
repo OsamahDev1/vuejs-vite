@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 networks:
   app_network:
   db:
@@ -23,7 +23,7 @@ services:
       - db
 
   php:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     container_name: ${APP_NAME}_php
@@ -31,6 +31,6 @@ services:
       - ./:/var/www/html
     ports:
       - "9001:9000"
-    networks: 
-      - app_network  
+    networks:
+      - app_network
       - db
